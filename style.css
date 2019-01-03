@@ -1,0 +1,95 @@
+body {
+    margin: 0 auto;
+    background-image: url('img/arms-close-up-duel-1249214.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    height: auto;
+    color: #4F5D2F;
+}
+
+.scoreBoard {
+    border: 3px solid #7d7e75;
+    width: 200px;
+    height: 50px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    padding: 20px 25px;
+    font-size: 40px;
+}
+
+#user {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+    background: #cfd6ea;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+#computer {
+    position: absolute;
+    top: 30px;
+    right: -35px;
+    background: #cfd6ea;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.gameMode {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.mode {
+    display: inline-block;
+    border: solid 3px white;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 0 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.mode:hover {
+    cursor: pointer;
+    background: #7d7e75;
+}
+
+.gameMode img {
+    width: auto;
+    height: 100px;
+}
+
+.message {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.moveMessage {
+    text-align: center;
+    color: #4F5D2F;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.green {
+    border: 3px solid #29b860;
+    background-color: #103b13;
+    box-shadow: 0 0 10px #103b13;
+}
+
+.red {
+    border: 3px solid #db1e1e;
+    background-color: #471111;
+    box-shadow: 0 0 10px #471111;
+}
+
+.grey {
+    border: 3px solid rgb(75, 74, 74);
+    background-color: rgb(37, 35, 35);
+    box-shadow: 0 0 10px rgb(37, 35, 35);
+}
