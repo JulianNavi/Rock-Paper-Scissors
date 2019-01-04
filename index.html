@@ -11,30 +11,39 @@
 </head>
 
 <body>
-    <div class="scoreBoard">
-        <div id="user">user</div>
-        <div id="computer">comp</div>
-        <span class="userScore">0</span>:<span class="computerScore">0</span>
+    <div id="gameStart">
+        <div class="headerStart">
+            <p>Let's begin game!</p>
+        </div>
+        <button id="startGame">Start Game</button>
     </div>
-    <div class="message"></div>
-    <div class="gameMode">
-        <div class="mode" id="ro">
-            <img src="img/hand-rock.png" alt="rock" />
+    <div id="gamePosition">
+        <div class="scoreBoard">
+            <div class="board">Scoreboard</div>
+            <div id="user">you</div>
+            <div id="computer">opponent</div>
+            <span class="userScore">0</span>:<span class="computerScore">0</span>
         </div>
-        <div class="mode" id="pa">
-            <img src="img/hand-paper.png" alt="paper" />
+        <div class="message"></div>
+        <div class="gameMode">
+            <div class="mode" id="ro">
+                <img src="img/hand-rock.png" alt="rock" />
+            </div>
+            <div class="mode" id="pa">
+                <img src="img/hand-paper.png" alt="paper" />
+            </div>
+            <div class="mode" id="sc">
+                <img src="img/hand-scissors.png" alt="scissors" />
+            </div>
+            <div class="mode" id="sp">
+                <img src="img/hand-spock.png" alt="spock" />
+            </div>
+            <div class="mode" id="li">
+                <img src="img/hand-lizard.png" alt="lizard" />
+            </div>
         </div>
-        <div class="mode" id="sc">
-            <img src="img/hand-scissors.png" alt="scissors" />
-        </div>
-        <div class="mode" id="sp">
-            <img src="img/hand-spock.png" alt="spock" />
-        </div>
-        <div class="mode" id="li">
-            <img src="img/hand-lizard.png" alt="lizard" />
-        </div>
+        <p class="moveMessage">Choose your movie</p>
     </div>
-    <p class="moveMessage">Choose your movie</p>
     <script src="index.js"></script>
 </body>
 

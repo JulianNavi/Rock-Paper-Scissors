@@ -8,8 +8,29 @@ body {
     color: #4F5D2F;
 }
 
+#gameStart {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.headerStart {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#startGame {
+    font-size: 20px;
+    background-color: #4F5D2F;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+#startGame:hover {
+    background-color: rgb(83, 112, 16);
+}
+
 .scoreBoard {
-    border: 3px solid #7d7e75;
     width: 200px;
     height: 50px;
     margin: 20px auto;
@@ -19,10 +40,15 @@ body {
     font-size: 40px;
 }
 
+.board {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 #user {
     position: absolute;
-    top: 30px;
-    left: -25px;
+    top: 63px;
+    left: 10px;
     background: #cfd6ea;
     padding: 5px 10px;
     font-size: 16px;
@@ -30,7 +56,7 @@ body {
 
 #computer {
     position: absolute;
-    top: 30px;
+    top: 63px;
     right: -35px;
     background: #cfd6ea;
     padding: 5px 10px;

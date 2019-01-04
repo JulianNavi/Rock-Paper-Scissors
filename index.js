@@ -10,6 +10,20 @@ const spockEl = document.getElementById('sp');
 const scissorsEl = document.getElementById('sc');
 const lizardEl = document.getElementById('li');
 
+//papildymas
+// const startBtn = document.getElementById('startGame');
+// const gamePositionMode = document.getElementById('gamePosition');
+
+
+// function startGame() {
+//     startBtn.addEventListener('click', () => {
+
+//     });
+// }
+// window.onload = function() {
+//     startGame();
+// };
+
 function symbolWord(letter) {
     if (letter === 'ro') return "Rock"
     if (letter === 'pa') return "Paper"
@@ -86,11 +100,11 @@ function gameUser(userChoise) {
     }
 };
 
-function gameStart() {
+function gamePosition() {
     rockEl.addEventListener('click', () => gameUser('ro'));
     paperEl.addEventListener('click', () => gameUser('pa'));
     scissorsEl.addEventListener('click', () => gameUser('sc'));
     spockEl.addEventListener('click', () => gameUser('sp'));
     lizardEl.addEventListener('click', () => gameUser('li'));
 };
-gameStart();
+gamePosition();
