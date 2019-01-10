@@ -18,6 +18,10 @@ body {
     font-weight: bold;
 }
 
+.selectGame {
+    margin-top: 20px;
+}
+
 #startGame {
     font-size: 20px;
     background-color: #4F5D2F;
@@ -92,7 +96,7 @@ body {
     font-weight: bold;
     font-size: 30px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .moveMessage {
@@ -118,4 +122,44 @@ body {
     border: 3px solid rgb(75, 74, 74);
     background-color: rgb(37, 35, 35);
     box-shadow: 0 0 10px rgb(37, 35, 35);
+}
+
+.hidden-position {
+    display: none;
+}
+
+.hidden-start {
+    display: none;
+}
+
+.hidden-button {
+    display: none;
+}
+
+.gameMatchMessage {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#button {
+    text-align: center;
+}
+
+.btnReplay {
+    font-size: 20px;
+    background-color: #4F5D2F;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.btnReplay :hover {
+    background-color: rgb(83, 112, 16);
+}
+
+input {
+    border-radius: 10px;
+    width: 50px;
 }

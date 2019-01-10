@@ -9,20 +9,33 @@ const paperEl = document.getElementById('pa');
 const spockEl = document.getElementById('sp');
 const scissorsEl = document.getElementById('sc');
 const lizardEl = document.getElementById('li');
+const gameStartPosition = document.getElementById('gameStart');
+const startBtn = document.getElementById('startGame');
+const gamePositionMode = document.getElementById('gamePosition');
+const gameMatchMessage = document.querySelector('.gameMatchMessage');
+const gameMode = document.querySelector('.gameMode');
+const buttonReplay = document.querySelector('.btnReplay');
+let roundNumber = 0;
+const renderMessage = document.getElementById('renderMessage');
 
-//papildymas
-// const startBtn = document.getElementById('startGame');
-// const gamePositionMode = document.getElementById('gamePosition');
+function startGame() {
+    startBtn.addEventListener('click', () => {
+        gamePositionMode.classList.remove('hidden-position');
+        gameStartPosition.classList.add('hidden-start');
+        buttonReplay.classList.add('hidden-button');
+        roundNumber = document.getElementById('gameNumber').value;
+        getNumberMatch();
+    });
+};
 
+window.addEventListener('load', function() {
+    gamePositionMode.classList.add('hidden-position');
+    startGame();
+});
 
-// function startGame() {
-//     startBtn.addEventListener('click', () => {
-
-//     });
-// }
-// window.onload = function() {
-//     startGame();
-// };
+buttonReplay.addEventListener('click', () => {
+    window.location.reload();
+});
 
 function symbolWord(letter) {
     if (letter === 'ro') return "Rock"
@@ -30,21 +43,25 @@ function symbolWord(letter) {
     if (letter === 'sc') return "Scissors"
     if (letter === 'sp') return "Spock"
     return "Lizard"
-}
+};
 
 function gameComp() {
     const choisesComp = ['ro', 'pa', 'sc', 'sp', 'li'];
     const randomNumber = Math.floor(Math.random() * 5);
     return choisesComp[randomNumber];
 };
-gameComp();
+
+function getNumberMatch() {
+    gameMatchMessage.textContent = `Left ${roundNumber} match.`;
+};
 
 function winUser(user, computer) {
     userScore++;
+    roundNumber--;
+    userScoreEl.textContent = userScore;
+    computerScoreEl.textContent = computerScore;
     const userName = ' (user)'.fontsize(3).sub();
-    const compName = ' (comp)'.fontsize(3).sub();
-    userScoreEl.innerHTML = userScore;
-    computerScoreEl.innerHTML = computerScore;
+    const compName = ' (comp)'.fontsize(3).sup();
     resultMessage.innerHTML = `${symbolWord(user)}${userName} beats ${symbolWord(computer)}${compName}. You win!`;
     const gameStatus = document.getElementById(user);
     gameStatus.classList.add('green');
@@ -53,20 +70,19 @@ function winUser(user, computer) {
 
 function winComp(user, computer) {
     computerScore++;
+    roundNumber--;
+    userScoreEl.textContent = userScore;
+    computerScoreEl.textContent = computerScore;
     const userName = ' (user)'.fontsize(3).sub();
-    const compName = ' (comp)'.fontsize(3).sub();
-    userScoreEl.innerHTML = userScore;
-    computerScoreEl.innerHTML = computerScore;
+    const compName = ' (comp)'.fontsize(3).sup();
     resultMessage.innerHTML = `${symbolWord(user)}${userName} loses to ${symbolWord(computer)}${compName}. You lost!`;
     const gameStatus = document.getElementById(user);
     gameStatus.classList.add('red');
     setTimeout(() => gameStatus.classList.remove('red'), 350);
 };
 
-function draw(user, computer) {
-    const userName = ' (user)'.fontsize(3).sub();
-    const compName = ' (comp)'.fontsize(3).sub();
-    resultMessage.innerHTML = `<p>It was a draw! You both chose ${symbolWord(user)}</p>`;
+function draw(user) {
+    resultMessage.textContent = `It was a draw! You both chose ${symbolWord(user)}`;
     const gameStatus = document.getElementById(user);
     gameStatus.classList.add('grey');
     setTimeout(() => gameStatus.classList.remove('grey'), 350);
@@ -94,10 +110,24 @@ function gameUser(userChoise) {
         case 'scsc':
             draw(userChoise, computerChoise);
             break;
-        default:
+        case 'rosp':
+        case 'ropa':
+        case 'pali':
+        case 'pasc':
+        case 'scsp':
+        case 'scro':
+        case 'spli':
+        case 'sppa':
+        case 'liro':
+        case 'lisc':
             winComp(userChoise, computerChoise);
             break;
     }
+    getNumberMatch();
+    if (roundNumber < 1) {
+        gameMode.classList.add('hidden-position');
+        buttonReplay.classList.remove('hidden-button');
+    };
 };
 
 function gamePosition() {
@@ -107,4 +137,6 @@ function gamePosition() {
     spockEl.addEventListener('click', () => gameUser('sp'));
     lizardEl.addEventListener('click', () => gameUser('li'));
 };
+
 gamePosition();
+gameComp();
