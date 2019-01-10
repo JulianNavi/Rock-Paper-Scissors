@@ -16,7 +16,6 @@ const gameMatchMessage = document.querySelector('.gameMatchMessage');
 const gameMode = document.querySelector('.gameMode');
 const buttonReplay = document.querySelector('.btnReplay');
 let roundNumber = 0;
-const renderMessage = document.getElementById('renderMessage');
 
 function startGame() {
     startBtn.addEventListener('click', () => {
